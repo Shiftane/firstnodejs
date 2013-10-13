@@ -7,5 +7,17 @@ html
     script(src='/javascripts/bootstrap.min.js')
     script(src='/javascripts/jquery-1.10.2.min.js')
   body
+    div.top
+    .container-narrow
+      .masthead
+        ul(class="nav nav-pills pull-right")
+          li
+            a(href="#") Accueil 
+          li
+            a(href="#") L'entreprise
+          li
+            a(href="#") Contacts
+        h3(class="muted") Déménager facile
+        hr
     #content
       block content  

@@ -1,21 +1,20 @@
 extends layout
 block append content
-  div.top
-    .container-narrow
-      .masthead
-        ul(class="nav nav-pills pull-right")
-          li
-            a(href="#") Home
-          li
-            a(href="#") About
-          li
-            a(href="#") Contact
-        h3(class="muted") Demo Node.js
-        hr
         div.container(class="jumbotron")
-          h1 Demo NodeJs
-          p(class="lead") Build with Node.js, Express, Jade & Twitter Bootstrap !
-          a(class="btn btn-success", id="btn") By Code4Fun.fr
+          h1 Entrer votre adresse actuelle 
+          p(class="lead") Aucune donnée ne sera suavegardé sans votre accord 
+          form.pull-right(name="input", method="post", action="/jobs")
+            div.control-group 
+              input.input-small(type="text", name="FirstName", placeholder="Nom")
+            div.control-group
+              input.input-small(type="text", name="LastName", placeholder="Prénom")
+            div.control-group
+              input.input-small(type="text", name="Street", placeholder="Rue")
+              input.input-small(type="text", name="Number", placeholder="N°")
+            div.control-group
+              input.input-small(type="text", name="locality", placeholder="Localité")
+            div.control-group
+              input.input-small(type="submit", class="btn btn-success", value="Changer d'adresse")
     :coffeescript
       $('#btn').bind 'click',(event) => 
         $('.lead').toggle()

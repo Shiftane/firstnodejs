@@ -1,6 +1,7 @@
 var express = require('express'),
     job = require('./routes/job'),
-    routes = require('./routes/routes');;
+    locality = require('./routes/locality'),
+    routes = require('./routes/routes');
 
 var app = express();
 
@@ -30,12 +31,10 @@ app.configure('production', function(){
 // Index home page
 app.get('/', routes.index);
 
-// Jobs REST API
-app.get('/jobs', job.findAll);
-app.get('/jobs/:id', job.findById);
-app.post('/jobs', job.addJob);
-app.put('/jobs/:id', job.updateJob);
-app.delete('/jobs/:id', job.deleteJob);
+// Locality API
+app.get('/locality/name/:name', locality.findByName);
+app.get('/locality/npa/:npa', locality.findByNPA);
 
+// Start server
 app.listen(3000);
 console.log('Server running at http://127.0.0.1:3000/');
