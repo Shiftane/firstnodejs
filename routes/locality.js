@@ -33,7 +33,7 @@ exports.findByNPA = function(req, res) {
     var npa = req.params.npa;
     console.log('Retrieving locality by NPA: ' + npa);
     db.collection('localities', function(err, collection) {
-        collection.find({'NPA': npa}).toArray(function(err, item) {
+        collection.find({'NPA': new mongo.Long(npa)}).toArray(function(err, item) {
             res.send(item);
         });
     });
