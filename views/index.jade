@@ -5,15 +5,15 @@ block append content
           p(class="lead") Aucune donnée ne sera suavegardé sans votre accord 
           form(name="input", method="post", action="/jobs")
             div.control-group 
-              input.input-small(type="text", name="FirstName", placeholder="Nom")
+              input.input-big(type="text", name="FirstName", placeholder="Nom", length="25")
             div.control-group
-              input.input-small(type="text", name="LastName", placeholder="Prénom")
+              input.input-big(type="text", name="LastName", placeholder="Prénom")
             div.control-group
-              input.input-small(class="typeahead name" type="text", name="locality", placeholder="Localité")
-              input.input-small(class="typeahead npa" type="text", name="npa", placeholder="NPA")
+              input.input-medium(class="typeahead name" type="text", name="locality", placeholder="Localité")
+              input.input-mini(class="typeahead npa" type="text", name="npa", placeholder="NPA")
             div.control-group
-              input.input-small(type="text", name="Street", placeholder="Rue")
-              input.input-small(type="text", name="Number", placeholder="N°")
+              input.input-medium(type="text", name="Street", placeholder="Rue")
+              input.input-mini(type="text", name="Number", placeholder="N°")
             div.control-group
               input.input-small(type="submit", class="btn btn-success", value="Changer d'adresse")
         :coffeescript
